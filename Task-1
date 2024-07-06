@@ -1,0 +1,52 @@
+import java.util.*;
+import java.io.*;
+public class StudentGradeCalculator
+{
+    public static void main(String[] args) 
+    {
+        System.out.println("**Welcome to Student Grade Calculator**");
+        String name;
+        Scanner s=new Scanner(System
+        .in);
+        System.out.print("Enter student name:");
+        name=s.nextLine();
+      int i,n,total=0;
+      float per;
+       System.out.print("Enter the number of subjects: ");
+       n=s.nextInt();
+       int marks[]=new int[n];
+      for ( i = 0; i < n; i++)
+      { 
+        System.out.print("Enter the marks for subject"+(i + 1) +"(out of 100):");
+        marks[i] =s.nextInt();
+        total=total+marks[i];
+       } 
+       per=total/n;
+       System.out.println("Total Mark obtained: " + total);
+        System.out.println("Percentage scored: " + per + "%");
+        if (per >= 90)
+        {
+            System.out.println(name +" secured grade A");
+        } 
+        else if (per>= 80) 
+        {
+            System.out.println(name + " secured grade B");
+        } 
+        else if (per>= 70)
+        {
+           System.out.println(name + " secured grade C");
+        }
+        else if (per>= 60)
+        {
+           System.out.println(name + " secured grade D");
+        } 
+        else if(per>=50)
+        {
+            System.out.println(name + " secured grade E");
+        }
+        else 
+        {
+            System.out.println(name + " secured grade F");
+        }
+    }
+}
