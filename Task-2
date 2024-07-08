@@ -1,0 +1,118 @@
+import java.io.*;
+import java.util.*;
+public class currency_converter
+{
+    static int target_currency;
+    static int amount;
+    public static void main(String args[])
+    {
+        System.out.println("***Currency List***");
+        System.out.println("1.INR Indian Rupee\n2.USA Dollar\n3.EUR Euro\n4.SGD Singapore Dollar");
+        int input_currency;
+        Scanner s=new Scanner(System.in);
+        System.out.print("Enter the base currency:");
+        input_currency=s.nextInt();
+        if(input_currency<5)
+        {
+            System.out.print("Enter the target currency:");
+        target_currency=s.nextInt();
+        System.out.print("Enter your amount:");
+        amount=s.nextInt();
+           switch(input_currency)
+        {
+            case 1:
+                Indian_Rupee_converter();
+                break;
+            case 2:
+                US_Dollar_converter();
+                break;
+            case 3:
+                Euro_converter();
+                break;
+            default:
+                Singapore_Dollar_converter();
+                break;
+        }
+    }
+        else
+        {
+            System.out.println("Invalid option");
+        }
+    }
+    public static void Indian_Rupee_converter()
+    {
+        if(target_currency==2)
+        {
+            System.out.println("Converted amount:USD "+(amount*0.012));
+        }
+        else if (target_currency==3)
+        {
+            System.out.println("Converted amount:EUR "+(amount*0.011));
+        }
+        else if(target_currency==4)
+        {
+            System.out.println("Converted amount:SGD "+(amount*0.0161));
+        }
+        else
+        {
+            System.out.println("Converted amount:INR "+amount);
+        }
+    }
+    public static void US_Dollar_converter()
+    {
+        if(target_currency==1)
+        {
+            System.out.println("Converted amount:INR "+(amount*83.5103));
+        }
+        else if(target_currency==3)
+        {
+            System.out.println("Converted amount:EUR "+(amount*0.9227));
+        }
+        else if(target_currency==4)
+        {
+            System.out.println("Converted amount:SGD "+(amount*1.3486));
+        }
+        else
+        {
+            System.out.println("Converted amount:USD"+amount);
+        }
+    }
+    public static void Euro_converter()
+    { 
+            if(target_currency==1)
+        {
+            System.out.println("Converted amount:INR "+(amount*90.5085));
+        }
+        else if(target_currency==2)
+        {
+            System.out.println("Converted amount:USD "+(amount*1.0838));
+        }
+        else if(target_currency==4)
+        {
+            System.out.println("Converted amount:SGD "+(amount*1.4616));
+        }
+        else
+        {
+            System.out.println("Converted amount:EUR"+amount);
+        }
+    }
+    public static void Singapore_Dollar_converter()
+    {
+        if(target_currency==1)
+        {
+            System.out.println("Converted amount:INR "+(amount*61.9238));
+        }
+        else if(target_currency==2)
+        {
+            System.out.println("Converted amount:USD "+(amount*0.7415));
+        }
+        else if(target_currency==3)
+        {
+            System.out.println("Converted amount:EUR "+(amount*0.6842));
+        }
+        else
+        {
+            System.out.println("Converted amount:SGD"+amount);
+        }
+    }
+}
